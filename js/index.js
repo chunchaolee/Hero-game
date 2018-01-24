@@ -87,19 +87,21 @@ class BaseCharacter {
       // i = 1 為開始播放
       if ( i == 1 ) {
         // 取得effect-image class 並設為顯示
-        // _this.element.getElementsByClassName("effect-image")[0].style.display = "block"
+        _this.element.getElementsByClassName("effect-image")[0].style.display = "block"
         // 取得heal-text class，並加入healed class顯示向上css效果
         _this.element.getElementsByClassName("heal-text")[0].classList.add("healed");
         // 取得healed class，並賦予heal值
         _this.element.getElementsByClassName("heal-text")[0].textContent = heal;
       }
 
+      _this.element.getElementsByClassName("effect-image")[0].src = 'images/effect/heal/' + i + '.png';
       i++;
+
 
       // i = 2 結束效果
       if ( i == 8 ) {
         // 隱蔽effect-image class
-        // _this.element.getElementsByClassName("effect-image")[0].style.display = "none"
+        _this.element.getElementsByClassName("effect-image")[0].style.display = "none"
         // 移除healed class
         _this.element.getElementsByClassName("heal-text")[0].classList.remove("healed");
         // 歸零heal-text

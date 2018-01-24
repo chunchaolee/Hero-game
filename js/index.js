@@ -67,6 +67,53 @@ class BaseCharacter {
     }
     hurtElement.style.width = (100 - this.hp/this.maxHp * 100) + "%";
   }
+
+  // get heal
+  getHeal(heal) {
+    // hero hp + heal
+    hero.hp += heal;
+    // 判斷heal值有無超過maxHp，超過則顯示maxHp，若無則正常顯示
+    if (hero.hp > hero.maxHp) {
+      hero.hp = hero.maxHp;
+    }
+    // update hero 的HTML上顯示的hp及hp-bar
+    hero.updateHtml(hero.hpElement, hero.hurtElement);
+
+    // 加入heal數字&特效
+    var _this = this;
+    var i = 1;
+
+    _this.id = setInterval(function() {
+      // i = 1 為開始播放
+      if ( i == 1 ) {
+        // 取得effect-image class 並設為顯示
+        // _this.element.getElementsByClassName("effect-image")[0].style.display = "block"
+        // 取得heal-text class，並加入healed class顯示向上css效果
+        _this.element.getElementsByClassName("heal-text")[0].classList.add("healed");
+        // 取得healed class，並賦予heal值
+        _this.element.getElementsByClassName("heal-text")[0].textContent = heal;
+      }
+
+      i++;
+
+      // i = 2 結束效果
+      if ( i == 8 ) {
+        // 隱蔽effect-image class
+        // _this.element.getElementsByClassName("effect-image")[0].style.display = "none"
+        // 移除healed class
+        _this.element.getElementsByClassName("heal-text")[0].classList.remove("healed");
+        // 歸零heal-text
+        _this.element.getElementsByClassName("heal-text")[0].textContent = "";
+        // 結束倒數計時
+        clearInterval(_this.id);
+      }
+
+    },80);
+
+
+
+  }
+
 }
 
 // hero class
@@ -200,13 +247,8 @@ function heroHeal() {
   document.getElementsByClassName("skill-block")[0].style.display = "none";
   // setTimeout for 英雄回血， 1st setTimeout for 英雄回血 
   setTimeout(function() {
-    // 英雄回血，一次+30HP，不得超過maxHp
-    hero.hp += 30;
-    if (hero.hp > hero.maxHp) {
-      hero.hp = hero.maxHp;
-    }
-    // update hero 的HTML上顯示的hp及hp-bar
-    hero.updateHtml(hero.hpElement, hero.hurtElement);
+    // 英雄回血，一次+30HP
+    hero.getHeal(30);
   }, 100);
 
   // setTimeout for 怪物移動， 1st setTimeout for怪物移動

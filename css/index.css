@@ -148,6 +148,22 @@
   width: 20%;
 }
 
+/* 給 .heal.healed 使用*/
+#hero-image-block    .character-block .heal-text{
+  position: absolute;
+  font-size: 60px;
+  color: green;
+  width: 100%;
+  left: 0px;
+  bottom: 50px;
+  font-family: "Contrail One";
+  transition: bottom 500ms;
+}
+
+#hero-image-block    .character-block .heal-text.healed {
+  bottom: 150px;
+}
+
 
 /* 設定 #monster-image-block .character-image 左右反轉 */
 #monster-image-block .character-image {

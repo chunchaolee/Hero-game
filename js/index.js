@@ -50,7 +50,7 @@ class BaseCharacter {
         clearInterval(_this.id);
       }
 
-    },90);
+    },80);
   }
 
   die() {
@@ -161,7 +161,7 @@ function heroAttack() {
       hero.attack(monster);
       hero.element.classList.remove("attacking");
     }, 500)
-  }, 300);
+  }, 100);
 
   // setTimeout for 怪物移動，1st setTimeout for 怪物前進或結束遊戲
   setTimeout(function() {
@@ -190,7 +190,7 @@ function heroAttack() {
       finish();
     };
 
-  },1300);
+  },1100);
 }
 
 

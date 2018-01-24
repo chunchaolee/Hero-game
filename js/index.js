@@ -50,7 +50,7 @@ class BaseCharacter {
         clearInterval(_this.id);
       }
 
-    },110);
+    },90);
   }
 
   die() {
@@ -160,8 +160,8 @@ function heroAttack() {
     setTimeout(function(){
       hero.attack(monster);
       hero.element.classList.remove("attacking");
-    }, 1000)
-  }, 200);
+    }, 500)
+  }, 100);
 
   // setTimeout for 怪物移動，1st setTimeout for 怪物前進或結束遊戲
   setTimeout(function() {
@@ -183,14 +183,14 @@ function heroAttack() {
           // 遊戲尚未結束，重新顯示hero skill-block
           document.getElementsByClassName("skill-block")[0].style.display = "block";
         }
-      }, 1000);
+      }, 500);
 
     } else {
       // monster 死亡，Gameover
       finish();
     };
 
-  },2200);
+  },1100);
 }
 
 

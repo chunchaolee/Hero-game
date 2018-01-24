@@ -194,7 +194,7 @@ function heroAttack() {
 }
 
 
-// hero 透過heroHeal開始恢復hp
+// hero 透過heroHeal開始恢復hp，而怪物進行攻擊
 function heroHeal() {
   // 點擊後隱藏skill block
   document.getElementsByClassName("skill-block")[0].style.display = "none";

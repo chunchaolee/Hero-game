@@ -91,7 +91,7 @@
 /* 給 #hero-image-block.attacking 或 #monster-image-block.attacking 使用*/
 #hero-image-block, #monster-image-block {
   position: relative;
-  transition: left 500ms, right 500ms;
+  transition: left 1000ms, right 1000ms;
   display: inline-block;
   width: 49%;
 }

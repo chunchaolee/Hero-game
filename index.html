@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Hero Game</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Contrail One">
+</head>
+<body>
+  <!-- 遊戲場景 -->
+  <div id="screen">
+    <!-- header -->
+    <div id="header">
+      <!-- Left: hero hp-block -->
+      <div class="hp-block hero-hp-block">
+        <!-- hero hp-bar -->
+        <div class="hp-bar">
+          <!-- 拆解hp bar: hero-hp-hurt -->
+          <div id="hero-hp-hurt"></div>
+        </div>
+
+        <!-- hero hp-text -->
+        <div class="hp-text">
+          <!-- 拆解hp-text hero-hp -->
+          <span id="hero-hp">130</span>/
+          <!-- 拆解hp-text hero-max-hp -->
+          <span id="hero-max-hp">130</span>
+        </div>
+      </div>
+      
+      <!-- Center: round-num -->
+      <div id="round-num">10</div>
+
+      <!-- Right: monster hp-block-->
+      <div class="hp-block monster-hp-block">
+        <!-- monster hp-bar -->
+        <div class="hp-bar">
+          <!-- 拆解hp bar: monster-hp-hurt -->
+          <div id="monster-hp-hurt"></div>
+        </div>
+
+        <!-- monster hp-text -->
+        <div class="hp-text">
+          <!-- 拆解hp-text monster-hp -->
+          <span id="monster-hp">130</span>/
+          <!-- 拆解hp-text monster-max-hp -->
+          <span id="monster-max-hp">130</span>
+        </div>  
+      </div>
+
+    </div>
+
+    <!-- plane -->
+    <div id="plane">
+      <!-- 拆解plane: hero-image-block -->
+      <div id="hero-image-block">
+        <!-- hero skill-block -->
+        <div class="skill-block">
+          <!-- skill -->
+          <img src="images/skill.png" id="skill" class="skill-image">
+          <!-- heal -->
+          <img src="images/heal.png" id="heal" class="skill-image">  
+        </div>
+
+        <!-- hero character-block -->
+        <div class="character-block">
+          <img src="images/hero.png" class="character-image hero-image">
+          <img class="effect-image" style="display: none">
+          <span class="hurt-text"></span>
+        </div>
+      </div>
+
+      <!-- 拆解plane: monster-image-block -->
+      <div id="monster-image-block">
+        <!-- monster character-block -->
+        <div class="character-block">
+          <img src="images/monster.png" class="character-image monster-image">
+          <img class="effect-image" style="display: none">
+          <span class="hurt-text"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gameover 介面 -->
+  <div id="dialog">
+    <div class="win-dialog">
+      <h2>HERO獲得勝利!</h2>
+      <button onclick="location.reload();">再玩一次？</button>
+    </div>
+    <div class="lose-dialog">
+      <h2>HERO輸掉比賽</h2>
+      <button onclick="location.reload();">再次挑戰？</button>
+    </div>    
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/index.js"></script>
+</body>
+</html>

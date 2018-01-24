@@ -50,7 +50,7 @@ class BaseCharacter {
         clearInterval(_this.id);
       }
 
-    },50);
+    },150);
   }
 
   die() {

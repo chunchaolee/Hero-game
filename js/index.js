@@ -112,8 +112,6 @@ class BaseCharacter {
 
     },80);
 
-
-
   }
 
 }
@@ -193,6 +191,21 @@ function endTurn() {
   if (rounds < 1) {
     // Game over
     finish();
+  }
+}
+
+
+// onkeyup 要驅動的function
+document.onkeyup = function(event) {
+  // 將keyCode轉成字元
+  var key = String.fromCharCode(event.keyCode);
+  // 按下A時，發動攻擊
+  if ( key == "A" ) {
+    heroAttack();
+  }
+  // 按下D時，恢復hp
+  if ( key == "D" ) {
+    heroHeal();
   }
 }
 
